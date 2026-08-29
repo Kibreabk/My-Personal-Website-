@@ -77,7 +77,7 @@
 
       var data = new FormData(form);
       // NOTE TO USER: Replace 'YOUR_ACCESS_KEY_HERE' with your real key from web3forms.com
-      data.append("access_key", "YOUR_ACCESS_KEY_HERE");
+      data.append("access_key", "c98d1b08-85b2-4825-8e05-500b6964909b");
       
       if (status) status.textContent = "Sending message...";
 
