@@ -76,16 +76,32 @@
       }
 
       var data = new FormData(form);
-      var name = String(data.get("name") || "").trim();
-      var replyTo = String(data.get("email") || "").trim();
-      var message = String(data.get("message") || "").trim();
-      var recipient = window.siteData && window.siteData.email ? window.siteData.email : "kibreyo@gmail.com";
-      var subject = "Website message from " + name;
-      var body = "Name: " + name + "\nReply to: " + replyTo + "\n\n" + message;
-      var mailto = "mailto:" + recipient + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      // NOTE TO USER: Replace 'YOUR_ACCESS_KEY_HERE' with your real key from web3forms.com
+      data.append("access_key", "YOUR_ACCESS_KEY_HERE");
+      
+      if (status) status.textContent = "Sending message...";
 
-      if (status) status.textContent = "Opening your email app...";
-      window.location.assign(mailto);
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          if (status) status.textContent = "Message sent successfully!";
+          form.reset();
+        } else {
+          console.log(response);
+          if (status) status.textContent = json.message || "Something went wrong!";
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        if (status) status.textContent = "Something went wrong! Check the console.";
+      });
     });
   }
 
