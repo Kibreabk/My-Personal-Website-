@@ -395,8 +395,8 @@ ul, ol { padding: 0; list-style: none; }
 .football-cards span { color: #afc1b6; font-size: .7rem; font-weight: 760; letter-spacing: .09em; text-transform: uppercase; }
 .football-cards h3 { margin-top: .45rem; font-family: var(--display); font-size: 1.2rem; font-weight: 500; }
 .football-cards p { margin-top: .3rem; color: #c5d3ca; font-size: .82rem; }
-.era-card { display: grid; grid-template-columns: 84px minmax(0,1fr); gap: .8rem; align-items: center; }
-.era-card img { width: 84px; height: 84px; object-fit: cover; border-radius: 13px; filter: grayscale(.25); }
+
+
 .nba-panel { position: relative; margin-top: 1rem; display: grid; grid-template-columns: 86px minmax(0,1fr); gap: 1rem; align-items: center; overflow: hidden; padding: 1.15rem; border: 1px solid rgba(245,132,44,.34); border-radius: 20px; background: linear-gradient(115deg, #0d3c72, #174f87 55%, #ed6a24); }
 .nba-panel::after { content: ""; position: absolute; width: 180px; height: 180px; right: -70px; bottom: -90px; border: 2px solid rgba(255,255,255,.22); border-radius: 50%; }
 .basketball-mark { width: 72px; height: 72px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: rgba(255,255,255,.08); font-size: 2.7rem; }
@@ -612,7 +612,7 @@ ul, ol { padding: 0; list-style: none; }
   border-radius: 18px;
   background: #0c1715;
 }
-.player-card img { width: 100%; height: 100%; object-fit: cover; object-position: center 14%; transition: transform 420ms var(--ease); }
+.player-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 14%; transition: transform 420ms var(--ease); }
 .player-card::after { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(to bottom, transparent, rgba(3,7,7,.94)); }
 .player-card div { position: absolute; z-index: 2; left: .85rem; right: .85rem; bottom: .82rem; }
 .player-card span { display: block; color: #b8c8be; font-size: .67rem; letter-spacing: .08em; text-transform: uppercase; }
@@ -653,7 +653,7 @@ ul, ol { padding: 0; list-style: none; }
   border-radius: 22px;
   background: rgba(255,255,255,.05);
 }
-.football-image-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 420ms var(--ease); }
+.football-image-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 420ms var(--ease); }
 .football-image-card::after { content: ""; position: absolute; inset: 38% 0 0; background: linear-gradient(to bottom, transparent, rgba(4,8,7,.95)); }
 .football-image-card > div { position: absolute; z-index: 2; left: 1rem; right: 1rem; bottom: 1rem; }
 .football-image-card span { color: #c2d0c7; font-size: .7rem; font-weight: 760; letter-spacing: .08em; text-transform: uppercase; }
